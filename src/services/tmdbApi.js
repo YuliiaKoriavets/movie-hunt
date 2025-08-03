@@ -9,6 +9,7 @@ export const getSearchingMovies = async (query) => {
   const response = await axiosInstance.get(`search/movie`, {
     params: { query },
   });
+    console.log(response)
   return response;
 };
 
@@ -18,12 +19,11 @@ export const getMovieById = async (movieId) => {
 };
 
 export const getMovieCredits = async (movieId) => {
-  const response = await axiosInstance.get(`movie/${movieId}/credits`);
+    const response = await axiosInstance.get(`movie/${movieId}/credits`);
   return response;
 };
 
 export const getMovieReviews = async (movieId) => {
     const response = await axiosInstance.get(`movie/${movieId}/reviews`);
-     console.log(response);
   return response;
 };

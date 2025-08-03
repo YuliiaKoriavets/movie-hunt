@@ -6,6 +6,7 @@ import SearchPage from "./pages/SearchPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import Cast from "./components/Cast";
 import Reviews from "./components/Reviews";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <ToastContainer autoClose={3000} position="top-center" />
     </>
   );
 }

@@ -6,7 +6,7 @@ export default function HomePage() {
   const [trendingMovies, setTrendingMovies] = useState();
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchTrendingMovies = async () => {
       try {
         const response = await getTrendingMovies();
         setTrendingMovies(response.data.results);
@@ -14,7 +14,7 @@ export default function HomePage() {
         console.error("Error fetching trending movies:", error);
       }
     };
-    fetchData();
+    fetchTrendingMovies();
   }, []);
 
   return (
