@@ -1,21 +1,29 @@
-import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard";
 import PropTypes from "prop-types";
 
-export default function MoviesList({ movies, state }) {
+export default function MoviesList({ movies }) {
   return (
     <ul>
-      {movies.map(({ id, title }) => (
-        <li key={id}>
-          <Link to={`${id}`} state={state}>
-            {title}
-          </Link>
-        </li>
+      {movies.map((movie) => (
+        <MovieCard
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          poster_path={movie.poster_path}
+          vote_average={movie.vote_average}
+        />
       ))}
     </ul>
   );
 }
 
 MoviesList.propTypes = {
-  movies: PropTypes.array.isRequired,
-  state: PropTypes.object.isRequired,
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string,
+      vote_average: PropTypes.number,
+    })
+  ).isRequired,
 };
