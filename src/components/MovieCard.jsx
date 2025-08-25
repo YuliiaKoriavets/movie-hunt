@@ -16,6 +16,9 @@ export default function MovieCard({ id, title, poster_path, vote_average }) {
       _hover={{ transform: "scale(1.05)", boxShadow: "2xl" }}
       transition="all 0.3s"
       bg="black"
+      w="100%"
+      h="100%"
+      p={2}
     >
       <Image
         src={
