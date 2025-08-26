@@ -1,6 +1,16 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Suspense } from "react";
-import { Box, Flex, Heading, Spacer, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Spacer,
+  Link,
+  Link as ChakraLink,
+  Text,
+  Icon,
+} from "@chakra-ui/react";
+import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 
 export default function SharedLayout() {
   return (
@@ -19,7 +29,13 @@ export default function SharedLayout() {
         zIndex={1000}
       >
         <Flex align="center" h="100%">
-          <Heading size="md">
+          <Heading
+            as="h1"
+            fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+            fontWeight="extrabold"
+            color="red.500"
+            _hover={{ color: "white", transition: "0.3s" }}
+          >
             <NavLink to="/" style={{ textDecoration: "none" }}>
               🎬 MovieHunt
             </NavLink>
@@ -30,8 +46,8 @@ export default function SharedLayout() {
               as={NavLink}
               to="/"
               key="home"
-              _hover={{ textDecoration: "none", color: "teal.300" }}
-              _activeLink={{ color: "teal.400", fontWeight: "bold" }}
+              _hover={{ textDecoration: "none", color: "red.400" }}
+              _activeLink={{ color: "red.500", fontWeight: "bold" }}
               end
             >
               Home
@@ -40,8 +56,8 @@ export default function SharedLayout() {
               as={NavLink}
               key="movies"
               to="/movies"
-              _hover={{ textDecoration: "none", color: "teal.300" }}
-              _activeLink={{ color: "teal.400", fontWeight: "bold" }}
+              _hover={{ textDecoration: "none", color: "red.400" }}
+              _activeLink={{ color: "red.500", fontWeight: "bold" }}
             >
               Movies
             </Link>
@@ -53,6 +69,30 @@ export default function SharedLayout() {
         <Suspense fallback={<p style={{ color: "white" }}>Loading page...</p>}>
           <Outlet />
         </Suspense>
+      </Box>
+      <Box as="footer" bg="gray.900" color="gray.300" py={8}>
+        <Flex direction="column" align="center" gap={4}>
+          <Text fontSize="lg" textAlign="center">
+            Want to know more about the world of cinema?
+            <br /> Subscribe and stay connected with us!
+          </Text>
+
+          <ChakraLink href="mailto:info@moviehunt.com" color="red.400">
+            info@moviehunt.com
+          </ChakraLink>
+
+          <Flex gap={6}>
+            <ChakraLink href="https://instagram.com" isExternal>
+              <Icon as={FaInstagram} w={6} h={6} color="pink.400" />
+            </ChakraLink>
+            <ChakraLink href="https://twitter.com" isExternal>
+              <Icon as={FaTwitter} w={6} h={6} color="blue.400" />
+            </ChakraLink>
+            <ChakraLink href="https://facebook.com" isExternal>
+              <Icon as={FaFacebook} w={6} h={6} color="blue.600" />
+            </ChakraLink>
+          </Flex>
+        </Flex>
       </Box>
     </>
   );

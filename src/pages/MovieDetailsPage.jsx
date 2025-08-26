@@ -30,12 +30,7 @@ export default function MovieDetailsPage() {
   return (
     <section>
       <BackButton to={backButtonHref}>Go back</BackButton>
-      {movie && (
-        <MovieDetails
-          movie={movie}
-          subLocation={subLocation}
-        />
-      )}
+      {movie && <MovieDetails movie={movie} subLocation={subLocation} />}
     </section>
   );
 }
