@@ -1,6 +1,7 @@
 import { Box, Button, Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export default function BackButton({ to, children }) {
   return (
@@ -24,3 +25,8 @@ export default function BackButton({ to, children }) {
     </Box>
   );
 }
+
+BackButton.propTypes = {
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  children: PropTypes.node.isRequired,
+};

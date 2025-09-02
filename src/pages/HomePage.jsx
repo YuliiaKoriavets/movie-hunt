@@ -28,7 +28,7 @@ export default function HomePage() {
         borderRadius="xl"
         mb={16}
       >
-        <Heading mb={4}>Welcome to MovieHunt 🎬</Heading>
+        <Heading  size="2xl" mb={4}>Welcome to MovieHunt</Heading>
         <Text fontSize="lg" mb={2}>
           Discover trending movies today and explore detailed information about
           thousands of films.

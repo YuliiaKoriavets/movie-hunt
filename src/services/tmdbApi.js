@@ -9,7 +9,6 @@ export const getSearchingMovies = async (query) => {
   const response = await axiosInstance.get(`search/movie`, {
     params: { query },
   });
-    console.log(response)
   return response;
 };
 
