@@ -52,7 +52,7 @@ export default function SearchPage() {
         mb={16}
       >
         <Heading size="2xl" mb={4}>
-          Movie Search 🎬
+          Movie Search
         </Heading>
         <Text fontSize="lg" mb={2}>
           Discover thousands of movies from all genres and decades.
